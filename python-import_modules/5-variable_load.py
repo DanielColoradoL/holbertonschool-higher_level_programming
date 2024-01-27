@@ -1,4 +1,11 @@
 #!/usr/bin/python3
-from variable_load_5.py import a
+import importlib.util
+
 if __name__ == "__main__":
-    print(a)
+    module_name = 'variable_load_5'
+    module_path = 'variable_load_5.py'
+    spec = importlib.util.spec_from_file_location(module_name, module_path)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+
+    print(module.a)
