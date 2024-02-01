@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 def simple_delete(a_dictionary, key=""):
-    output = a_dictionary.copy()
-    if key in output:
-        output.pop(key)
-    return output
+    if key in a_dictionary:
+        a_dictionary.pop(key)
+    return a_dictionary
