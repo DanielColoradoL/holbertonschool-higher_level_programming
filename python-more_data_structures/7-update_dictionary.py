@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 def update_dictionary(a_dictionary, key, value):
-    output = a_dictionary.copy()
-    if key in output.keys():
-        output[key] = value
+    if key in a_dictionary.keys():
+        print(f"This is key {key} and this is value {value}")
+        a_dictionary[key] = value
     else:
-        output.update({key: value})
-    return (output)
+        a_dictionary.update({key: value})
+    return (a_dictionary)
