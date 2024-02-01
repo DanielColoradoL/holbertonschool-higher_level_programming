@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
     if roman_string is None or type(roman_string) is not str:
-        return None
+        return 0
     int_list = list()
     output = 0
     flag = 0
@@ -20,10 +20,10 @@ def roman_to_int(roman_string):
             int_list.append(500)
 
     for index in range(len(int_list)):
+        if flag == 1:
+            flag = 0
+            continue
         if index + 1 == len(int_list):
-            if flag == 1:
-                flag = 0
-                continue
             output = output + int_list[index]
         elif int_list[index] >= int_list[index + 1]:
             output = output + int_list[index]
