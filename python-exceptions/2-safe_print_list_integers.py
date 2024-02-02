@@ -15,9 +15,7 @@ def safe_print_list_integers(my_list=[], x=0):
         try:
             print("{:d}".format(my_list[index]), end="")
             count = count + 1
-        except IndexError:
-            print(end="")
-        except (TypeError, ValueError):
-            print(end="")
-    print()
+        except (TypeError, ValueError, IndexError):
+            continue
+    print("")
     return count
