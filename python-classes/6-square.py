@@ -93,7 +93,7 @@ class Square:
             for j in range(s):
                 for k in range(coordinates[0]):
                     if j == 0:
-                        print("_", end="")
+                        print(" ", end="")
                 print("#", end="")
             print()
 
