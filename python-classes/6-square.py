@@ -87,7 +87,7 @@ class Square:
         if s == 0:
             print()
             return
-        
+
         for z in range(coordinates[1]):
             print()
 
@@ -107,6 +107,3 @@ class Square:
             The area of the square.
         """
         return self.__size ** 2
-
-my_square = Square(0, (10, 3))
-my_square.my_print()
