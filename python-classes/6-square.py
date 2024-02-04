@@ -86,14 +86,14 @@ class Square:
         coordinates = self.__position
         if s == 0:
             print()
+        for z in range(coordinates[1]):
+            print()
+
         for i in range(s):
             for j in range(s):
                 for k in range(coordinates[0]):
                     if j == 0:
-                        if coordinates[1] > 0:
-                            print("_", end="")
-                        else:
-                            print(" ", end="")
+                        print("_", end="")
                 print("#", end="")
             print()
 
