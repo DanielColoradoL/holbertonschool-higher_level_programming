@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+Module containing only add_integer function
+"""
+
+
 def add_integer(a, b=98):
     """
     add_integer - ddds a and b
@@ -13,7 +18,7 @@ def add_integer(a, b=98):
 
     Return:
         the resulting addition casted to integer
-    """   
+    """
     if type(a) not in [int, float]:
         raise TypeError("a must be an integer")
     if type(b) not in [int, float]:
