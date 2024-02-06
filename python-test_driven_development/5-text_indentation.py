@@ -28,4 +28,4 @@ def text_indentation(text):
             if text[index] == " ":
                 index += 1
             start = index
-    print(text[start: index + 1])
+    print(text[start: index + 1], end="")
