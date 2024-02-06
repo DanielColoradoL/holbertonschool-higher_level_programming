@@ -25,7 +25,7 @@ def text_indentation(text):
                 index += 1
             print(text[start: index])
             print()
-            if text[index] == " ":
+            while text[index] == " ":
                 index += 1
             start = index
     print(text[start: index + 1], end="")
