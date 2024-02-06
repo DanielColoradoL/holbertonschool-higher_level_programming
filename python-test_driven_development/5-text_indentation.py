@@ -24,7 +24,7 @@ def text_indentation(text):
             if index < len(text):
                 index += 1
             print(text[start: index])
-            print("")
+            print()
             if text[index] == " ":
                 index += 1
             start = index
