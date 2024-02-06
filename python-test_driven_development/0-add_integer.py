@@ -6,7 +6,7 @@ Module containing only add_integer function
 
 def add_integer(a, b=98):
     """
-    add_integer - ddds a and b
+    add_integer - adds a and b
         it checks whether the arguments are integer or floats
         then if the arguments are floats, it checks whether
         the arguments are casted to integer

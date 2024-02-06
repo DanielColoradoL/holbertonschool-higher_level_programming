@@ -1,0 +1,101 @@
+
+===========================
+How to Use 2-matrix_divided.py
+===========================
+
+This module defines a list of lists division function "matrix_divided(matrix, div)".
+
+=====
+Usage
+=====
+
+    >>> matrix = [
+    >>>     [1, 2, 3],
+    >>>     [4, 5, 6]
+    >>> ]
+    >>> print(matrix_divided(matrix, 3))
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+matrix_divided(matrix, div) returns a new list where every item is divided by div
+
+=====
+Tests
+=====
+
+1   
+
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+    >>> matrix = [[1, 2, 3],[4, 5, 6]]
+    >>> print(matrix_divided(matrix, 3))
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+2
+
+    >>> matrix = [[3]]
+    >>> print(matrix_divided(matrix, 3))
+    [[1.0]]
+
+3
+
+    >>> matrix = [[3, 9], [12, 15]]
+    >>> print(matrix_divided(matrix, -3))
+    [[-1.0, -3.0], [-4.0, -5.0]]
+
+4   Division by 0
+
+    >>> matrix = [[3, 9], [12, 15]]
+    >>> print(matrix_divided(matrix, 0))
+    Traceback (most recent call last):
+    ZeroDivisionError: division by zero
+
+5   Lists not having the same size
+
+    >>> matrix = [[3, 9], [12, 15, 3]]
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: Each row of the matrix must have the same size
+
+6   Having a string within one of the lists
+
+    >>> matrix = [[3, "9"], [15, 3]]
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+7   the divisor being a char
+
+    >>> matrix = [[3, 10], [15, 3]]
+    >>> print(matrix_divided(matrix, "C"))
+    Traceback (most recent call last):
+    TypeError: div must be a number
+
+8   calling the function without arguments
+
+    >>> print(matrix_divided())
+    Traceback (most recent call last):
+    TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+9   calling the function mission one argument
+
+    >>> matrix = [[3, 10], [15, 3]]
+    >>> print(matrix_divided(matrix))
+    Traceback (most recent call last):
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+10  division by infinite
+
+    >>> matrix = [[3, 10], [15, 3]]
+    >>> print(matrix_divided(matrix, float('inf')))
+    [[0.0, 0.0], [0.0, 0.0]]
+
+11  dividend being infinite
+
+    >>> matrix = [[float('inf'), 10], [15, 3]]
+    >>> print(matrix_divided(matrix, 5))
+    [[inf, 2.0], [3.0, 0.6]]
+
+12  dividend and divisor being infinite
+
+    >>> matrix = [[float('inf'), 10], [15, 3]]
+    >>> print(matrix_divided(matrix, float('inf')))
+    [[nan, 0.0], [0.0, 0.0]]

@@ -11,6 +11,10 @@ Usage
 
 add_integer(a, b) returns the addition of a and b
 
+=====
+Tests
+=====
+
 1
 
     >>> add_integer = __import__('0-add_integer').add_integer
