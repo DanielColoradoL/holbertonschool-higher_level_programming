@@ -42,4 +42,4 @@ Tests
 5   Missing last_name argument
 
     >>> say_my_name("Sean")
-    My name is Sean
+    My name is Sean 
