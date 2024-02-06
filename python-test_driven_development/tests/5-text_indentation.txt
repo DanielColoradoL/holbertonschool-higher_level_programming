@@ -1,0 +1,47 @@
+
+===========================
+How to Use 5-text_indentation.py
+===========================
+
+This module only contains the function "def text_indentation(text)".
+
+=====
+Usage
+=====
+
+The function text_indentation(text) takes a string as input. 
+It splits the string into segments wherever it encounters '.', '?', or ':'.
+After splitting, it adds a new line to each segment."
+
+=====
+Tests
+=====
+
+1   
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+    >>> text_indentation("Daniel. Lives: Melbourne, right?I guess so")
+    Daniel.
+    <BLANKLINE>
+    Lives:
+    <BLANKLINE>
+    Melbourne, right?
+    <BLANKLINE>
+    I guess so
+
+2   
+
+    >>> text_indentation(True)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+3
+
+    >>> text_indentation()
+    Traceback (most recent call last):
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+4   Having no arguments
+
+    >>> text_indentation(" ")
+    <BLANKLINE>
