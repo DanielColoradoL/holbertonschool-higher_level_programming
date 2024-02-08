@@ -44,7 +44,7 @@ class Rectangle:
         """
         Prints a representation of the rectangle
         """
-        output = f"{self.__class__.__name__}({self.__width},{self.__height})"
+        output = f"{self.__class__.__name__}({self.__width}, {self.__height})"
         return output
 
     @property
