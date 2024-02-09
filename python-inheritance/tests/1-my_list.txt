@@ -28,49 +28,67 @@ Tests
 
 2   Checks my_list inherits from list
 
-    >>> my_list = MyList()
+    >>> my_list1 = MyList()
     >>> print(issubclass(MyList,list))
     True
 
 
 3   Ordered list sorting
 
-    >>> test_list = MyList()
-    >>> test_list.append(1)
-    >>> test_list.append(2)
-    >>> test_list.append(3)
-    >>> test_list.append(4)
-    >>> print(test_list)
+    >>> test_list2 = MyList()
+    >>> test_list2.append(1)
+    >>> test_list2.append(2)
+    >>> test_list2.append(3)
+    >>> test_list2.append(4)
+    >>> print(test_list2)
     [1, 2, 3, 4]
-    >>> test_list.print_sorted()
+    >>> test_list2.print_sorted()
+    [1, 2, 3, 4]
     [1, 2, 3, 4]
 
 4 Unordered list sorting
 
-    >>> test_list = MyList()
-    >>> test_list.append(4)
-    >>> test_list.append(8)
-    >>> test_list.append(1)
-    >>> test_list.append(0)
-    >>> print(test_list)
+    >>> test_list3 = MyList()
+    >>> test_list3.append(4)
+    >>> test_list3.append(8)
+    >>> test_list3 .append(1)
+    >>> test_list3.append(0)
+    >>> print(test_list3)
     [4, 8, 1, 0]
-    >>> test_list.print_sorted()
+    >>> test_list3.print_sorted()
+    [0, 1, 4, 8]
     [0, 1, 4, 8]
 
 5 Unordered list with negative numbers sorting
 
-    >>> test_list = MyList()
-    >>> test_list.append(4)
-    >>> test_list.append(8)
-    >>> test_list.append(-1)
-    >>> test_list.append(-4)
-    >>> print(test_list)
+    >>> test_list4 = MyList()
+    >>> test_list4.append(4)
+    >>> test_list4.append(8)
+    >>> test_list4.append(-1)
+    >>> test_list4.append(-4)
+    >>> print(test_list4)
     [4, 8, -1, -4]
-    >>> test_list.print_sorted()
+    >>> test_list4.print_sorted()
     [-4, -1, 4, 8]
-
+    [-4, -1, 4, 8]
+    
 5 Sorting an empty list
 
-    >>> test_list = MyList()
-    >>> test_list.print_sorted()
+    >>> test_list5 = MyList()
+    >>> test_list5.print_sorted()
     []
+    []
+
+6 print_sorted returns a different list
+
+    >>> test_list6 = MyList()
+    >>> test_list6.append(1)
+    >>> test_list6.append(2)
+    >>> test_list6.append(3)
+    >>> x = test_list6.print_sorted()
+    [1, 2, 3]
+    >>> if id(x) == id(test_list6):
+    ...     print(True)
+    ... else: 
+    ...     print(False)
+    False

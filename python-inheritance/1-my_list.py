@@ -10,4 +10,5 @@ class MyList(list):
         copies the original, sort it and return the copy"""
         x = self.copy()
         x.sort()
-        return print(x)
+        print(x)
+        return x
