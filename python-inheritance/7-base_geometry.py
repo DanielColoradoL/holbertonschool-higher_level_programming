@@ -2,7 +2,7 @@
 """ Module containing BaseGeometry class  """
 
 
-class BaseGeometry:
+class BaseGeometry():
     """ Represent a BaseGeometry """
 
     def area(self):

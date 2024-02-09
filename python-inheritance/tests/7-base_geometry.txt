@@ -1,0 +1,19 @@
+===========================
+How to Use 7-base_geometry.py
+===========================
+
+This module only contains the class BaseGeometry "class BaseGeometry():".
+
+=====
+Usage
+=====
+
+The class is still under construction, so far it has an area method that raises an error
+and an integer validator which checks if an input is an integer
+
+=====
+Tests
+=====
+
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+

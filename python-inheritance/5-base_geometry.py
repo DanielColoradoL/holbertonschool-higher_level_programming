@@ -3,5 +3,5 @@
 
 
 class BaseGeometry:
-    """ Represent a Rectangle  """
+    """ Represent a BaseGeometry  """
     pass
