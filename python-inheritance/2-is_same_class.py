@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module containing print_sorted"""
+"""Module containing is_same_class"""
 
 
 def is_same_class(obj, a_class):
