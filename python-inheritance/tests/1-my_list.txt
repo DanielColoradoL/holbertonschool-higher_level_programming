@@ -29,7 +29,7 @@ Tests
 2   Checks my_list inherits from list
 
     >>> my_list = MyList()
-    >>> print(issubclass(my_list,list))
+    >>> print(issubclass(MyList,list))
     True
 
 
@@ -41,8 +41,8 @@ Tests
     >>> test_list.append(3)
     >>> test_list.append(4)
     >>> print(test_list)
-    >>> test_list.print_sorted()
     [1, 2, 3, 4]
+    >>> test_list.print_sorted()
     [1, 2, 3, 4]
 
 4 Unordered list sorting
@@ -53,8 +53,8 @@ Tests
     >>> test_list.append(1)
     >>> test_list.append(0)
     >>> print(test_list)
-    >>> test_list.print_sorted()
     [4, 8, 1, 0]
+    >>> test_list.print_sorted()
     [0, 1, 4, 8]
 
 5 Unordered list with negative numbers sorting
@@ -65,6 +65,6 @@ Tests
     >>> test_list.append(-1)
     >>> test_list.append(-4)
     >>> print(test_list)
-    >>> test_list.print_sorted()
     [4, 8, -1, -4]
+    >>> test_list.print_sorted()
     [-4, -1, 4, 8]
