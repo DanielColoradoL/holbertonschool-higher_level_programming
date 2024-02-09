@@ -68,3 +68,9 @@ Tests
     [4, 8, -1, -4]
     >>> test_list.print_sorted()
     [-4, -1, 4, 8]
+
+5 Sorting an empty list
+
+    >>> test_list = MyList()
+    >>> test_list.print_sorted()
+    []
