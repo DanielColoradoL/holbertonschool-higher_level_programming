@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module containing Student Class"""
-
+import os
+import sys
 
 class Student():
     """Defines a student"""
@@ -29,5 +30,5 @@ class Student():
         """Update attributes based on a JSON
         dictionary"""
         self.first_name = json.get("first_name")
-        self.first_name = json.get("last_name")
-        self.first_name = json.get("age")
+        self.last_name = json.get("last_name")
+        self.age = json.get("age")
