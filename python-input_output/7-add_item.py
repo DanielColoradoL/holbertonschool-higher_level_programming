@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module containing load_from_json_file"""
+"""Module running script to load, edit and save a JSON file"""
 import sys
 from pathlib import Path
 
