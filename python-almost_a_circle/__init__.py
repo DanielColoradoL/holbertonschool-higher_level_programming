@@ -8,8 +8,27 @@ class Base():
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """Class constructor"""
+        """Class constructor
+        If id not provided it will
+        assing a unique value"""
         if id is not None:
             self.id = id
-        Base.__nb_objects += 1
-        self.id = Base.__nb_objects
+        else:
+            Base.__nb_objects += 1
+            self.id = Base.__nb_objects
+
+
+b1 = Base()
+print(b1.id)
+
+b2 = Base()
+print(b2.id)
+
+b3 = Base()
+print(b3.id)
+
+b4 = Base(12)
+print(b4.id)
+
+b5 = Base()
+print(b5.id)
