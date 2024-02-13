@@ -100,7 +100,13 @@ class Rectangle(Base):
 
     def display(self):
         """Prints rectangle with #"""
+        for i in range(self.y):
+            print()
+
         for row in range(self.__height):
+            for j in range(self.x):
+                print(" ", end="")
+
             for column in range(self.__width):
                 print("#", end="")
             print()
