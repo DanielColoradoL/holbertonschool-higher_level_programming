@@ -117,17 +117,29 @@ class Rectangle(Base):
         l2 = f" {self.__width}/{self.__height}"
         return l1 + l2
 
-    def update(self, *args):
-        """Update the Rectangle values based on *args"""
+    def update(self, *args, **kwargs):
+        """Update the Rectangle values based on *args or **kargs"""
         leng = len(args)
 
-        if leng >= 1:
-            self.id = args[0]
-        if leng >= 2:
-            self.__width = args[1]
-        if leng >= 3:
-            self.__height = args[2]
-        if leng >= 4:
-            self.__x = args[3]
-        if leng == 5:
-            self.__y = args[4]
+        if args is not None and leng > 0:
+            if leng >= 1:
+                self.id = args[0]
+            if leng >= 2:
+                self.__width = args[1]
+            if leng >= 3:
+                self.__height = args[2]
+            if leng >= 4:
+                self.__x = args[3]
+            if leng == 5:
+                self.__y = args[4]
+        else:
+            if "id" in kwargs:
+                self.id = kwargs.get("id")
+            if "width" in kwargs:
+                self.__width = kwargs.get("width")
+            if "height" in kwargs:
+                self.__height = kwargs.get("height")
+            if "x" in kwargs:
+                self.__x = kwargs.get("x")
+            if "y" in kwargs:
+                self.__y = kwargs.get("y")
