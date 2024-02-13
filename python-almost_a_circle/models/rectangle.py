@@ -107,6 +107,6 @@ class Rectangle(Base):
 
     def __str__(self):
         """Adds the print feature to the class"""
-        l1 = f"[rectangle] ({self.id}) {self.__x}/{self.__y} -"
+        l1 = f"[Rectangle] ({self.id}) {self.__x}/{self.__y} -"
         l2 = f" {self.__width}/{self.__height}"
         return l1 + l2
