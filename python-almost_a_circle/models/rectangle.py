@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """This module contains the Rectangle class"""
-from models.base import Base
+from base import Base
 
 
 class Rectangle(Base):
@@ -104,3 +104,9 @@ class Rectangle(Base):
             for column in range(self.__width):
                 print("#", end="")
             print()
+
+    def __str__(self):
+        """Adds the print feature to the class"""
+        l1 = f"[rectangle] ({self.id}) {self.__x}/{self.__y} -"
+        l2 = f" {self.__width}/{self.__height}"
+        return l1 + l2
