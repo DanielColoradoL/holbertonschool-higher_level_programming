@@ -15,3 +15,21 @@ class Square(Rectangle):
         l1 = f"[Square] ({self.id}) {self.x}/{self.y} -"
         l2 = f" {self.width}"
         return l1 + l2
+
+    @property
+    def size(self):
+        """Read the private size"""
+        return self.width
+
+    @size.setter
+    def size(self, size):
+        """Modify the private size attribute
+        It changes width and height underneath"""
+
+        if not isinstance(size, int):
+            raise TypeError("width must be an integer")
+        if size < 0:
+            raise ValueError("width must be > 0")
+
+        self.width = size
+        self.height = size
