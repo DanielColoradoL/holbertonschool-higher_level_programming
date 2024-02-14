@@ -1,11 +1,15 @@
 #!/usr/bin/python3
-""" 15-main """
+""" 19-main """
 from models.rectangle import Rectangle
+from models.square import Square
+
 
 
 r1 = Rectangle(10, 7, 2, 8)
 r2 = Rectangle(2, 4)
-Rectangle.save_to_file([r1, r2])
+list_rectangles_input = [r1, r2]
 
-with open("Rectangle.json", "r") as file:
-    print(file.read())
+Rectangle.save_to_file(list_rectangles_input)
+
+list_rectangles_output = Rectangle.load_from_file()
+print(list_rectangles_output)
