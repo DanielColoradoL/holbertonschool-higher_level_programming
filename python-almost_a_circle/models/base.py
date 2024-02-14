@@ -55,3 +55,15 @@ class Base():
             dummy = cls(1)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """returns a list of instances
+        Reads JSON file, change it from str to data type
+        create new instances with the extracted dictionary"""
+        with open(f"{cls.__name__}.json", encoding="utf-8") as f:
+            json_str = cls.from_json_string(f.read())
+            output_list = []
+            for object_args in json_str:
+                output_list.append(cls.create(**object_args))
+            return output_list
