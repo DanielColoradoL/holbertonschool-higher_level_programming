@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """This module contains the Base class"""
 import json
-from pathlib import Path
+import os
 
 
 class Base():
@@ -63,11 +63,10 @@ class Base():
         Reads JSON file, change it from str to data type
         create new instances with the extracted dictionary"""
 
-        f_path_1 = Path("Rectangle.json")
-        f_path_2 = Path("Square.json")
+        f_path_1 = "Rectangle.json"
+        f_path_2 = "Square.json"
 
-        if f_path_1.exists() or f_path_2.exists():
-            print("entro aqui")
+        if os.path.exists(f_path_1) or os.path.exists(f_path_2):
             with open(f"{cls.__name__}.json", encoding="utf-8") as f:
                 json_str = cls.from_json_string(f.read())
                 output_list = []
