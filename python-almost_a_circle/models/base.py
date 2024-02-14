@@ -45,3 +45,10 @@ class Base():
                     dic = object.to_dictionary()
                     output.append(dic)
                 f.write(cls.to_json_string(output))
+
+    @classmethod
+    def create(cls, **dictionary):
+        """returns a new instance with all attributes already set"""
+        dummy = cls(1, 2, 3)
+        dummy.update(**dictionary)
+        return dummy
