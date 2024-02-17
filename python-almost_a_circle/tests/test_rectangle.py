@@ -149,3 +149,43 @@ class TestRectangle(unittest.TestCase):
         a = Rectangle(1, 1)
         b = a.create(**{'id': 89, 'width': 10, 'height': 20, 'x': 3, 'y': 4})
         self.assertNotEqual(a, b)
+
+    def test_save_to_file(self):
+        """Test the save to file method"""
+        a = Rectangle(1, 1, 1, 1, 1)
+        b = Rectangle(2, 2, 2, 2, 2)
+        l1 = '[{"id": 1, "width": 1, "height": 1, "x": 1, "y": 1}'
+        l2 = ', {"id": 2, "width": 2, "height": 2, "x": 2, "y": 2}]'
+
+        a.save_to_file(None)
+        with open("Rectangle.json", "r") as f:
+            self.assertEqual(f.read(), "[]")
+        os.remove("Rectangle.json")
+
+        a.save_to_file([])
+        with open("Rectangle.json", "r") as f:
+            self.assertEqual(f.read(), "[]")
+        os.remove("Rectangle.json")
+
+        a.save_to_file([a, b])
+        with open("Rectangle.json", "r") as f:
+            self.assertEqual(f.read(), l1 + l2)
+        os.remove("Rectangle.json")
+
+    def test_load_from_file(self):
+        """Test the load from file method"""
+        a = Rectangle(1, 1, 1, 1, 1)
+        b = Rectangle(2, 2, 2, 2, 2)
+
+        """Loading an a path that does not exist"""
+        self.assertEqual(a.load_from_file(), [])
+
+        """Addidg a and b to a new file"""
+        a.save_to_file([a, b])
+
+        """Loading a path that exist
+        compares it's loaded values"""
+        list_read = a.load_from_file()
+        self.assertEqual(list_read[0].id, 1)
+        self.assertEqual(list_read[1].x, 2)
+        os.remove("Rectangle.json")
