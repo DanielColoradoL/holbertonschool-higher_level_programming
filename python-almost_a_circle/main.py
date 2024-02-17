@@ -2,14 +2,11 @@
 """ 19-main """
 from models.rectangle import Rectangle
 from models.square import Square
+from models.base import Base
 
 
 
-r1 = Rectangle(10, 7, 2, 8)
-r2 = Rectangle(2, 4)
-list_rectangles_input = [r1, r2]
+b1 = Base()
+b2 = Base()
 
-Rectangle.save_to_file(list_rectangles_input)
-
-list_rectangles_output = Rectangle.load_from_file()
-print(list_rectangles_output)
+print(b1.id, b2.id)
