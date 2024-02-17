@@ -193,3 +193,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(list_read[0].id, 1)
         self.assertEqual(list_read[1].x, 2)
         os.remove("Rectangle.json")
+
+
+if __name__ == "__main__":
+    unittest.main()

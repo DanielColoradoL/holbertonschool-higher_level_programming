@@ -153,3 +153,7 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(list_read[0].id, 1)
         self.assertEqual(list_read[1].x, 2)
         os.remove("Square.json")
+
+
+if __name__ == "__main__":
+    unittest.main()
