@@ -118,8 +118,8 @@ class TestSquare(unittest.TestCase):
         """Test the save to file method"""
         a = Square(1, 1, 1, 1)
         b = Square(2, 2, 2, 2)
-        l1 = '[{"id": 1, "size": 1, "x": 1, "y": 1}'
-        l2 = ', {"id": 2, "size": 2, "x": 2, "y": 2}]'
+        l1 = "[{\"id\": 1, \"size\": 1, \"x\": 1, \"y\": 1}"
+        l2 = ", {\"id\": 2, \"size\": 2, \"x\": 2, \"y\": 2}]"
 
         a.save_to_file(None)
         with open("Square.json", "r") as f:

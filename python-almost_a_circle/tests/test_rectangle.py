@@ -158,8 +158,8 @@ class TestRectangle(unittest.TestCase):
         """Test the save to file method"""
         a = Rectangle(1, 1, 1, 1, 1)
         b = Rectangle(2, 2, 2, 2, 2)
-        l1 = '[{"id": 1, "width": 1, "height": 1, "x": 1, "y": 1}'
-        l2 = ', {"id": 2, "width": 2, "height": 2, "x": 2, "y": 2}]'
+        l1 = "[{\"id\": 1, \"width\": 1, \"height\": 1, \"x\": 1, \"y\": 1}"
+        l2 = ", {\"id\": 2, \"width\": 2, \"height\": 2, \"x\": 2, \"y\": 2}]"
 
         a.save_to_file(None)
         with open("Rectangle.json", "r") as f:
