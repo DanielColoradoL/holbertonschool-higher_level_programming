@@ -25,7 +25,7 @@ class TestBase(unittest.TestCase):
         self.assertEqual(b, "[]")
 
         c = Base.to_json_string([{'id': 12}])
-        self.assertEqual(c, '[{"id": 12}]')
+        self.assertEqual(c, "[{\"id\": 12}]")
 
         d = type(Base.to_json_string([{'id': 12}]))
         self.assertEqual(d, str)
@@ -36,10 +36,10 @@ class TestBase(unittest.TestCase):
         f = Base.from_json_string("[]")
         self.assertEqual(f, [])
 
-        g = Base.from_json_string('[{ "id": 89 }]')
+        g = Base.from_json_string("[{ \"id\": 89 }]")
         self.assertEqual(g, [{'id': 89}])
 
-        h = type(Base.from_json_string('[{ "id": 89 }]'))
+        h = type(Base.from_json_string("[{ \"id\": 89 }]"))
         self.assertEqual(h, list)
 
     def test_to_json_string_none(self):
@@ -49,7 +49,7 @@ class TestBase(unittest.TestCase):
         self.assertEqual(a, "[]")
 
         z = Base.to_json_string(None)
-        self.assertEqual(z, "[]")
+        self.assertTrue(z == "[]")
 
 
 if __name__ == "__main__":
