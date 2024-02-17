@@ -4,8 +4,8 @@ import unittest
 from models.base import Base
 
 
-class TestBase_instantiation(unittest.TestCase):
-    """Define unittests for Base_Test([..])."""
+class TestBase(unittest.TestCase):
+    """Define unittests for TestBase."""
 
     def test_id(self):
         """Test instantiation id"""
