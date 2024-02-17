@@ -11,16 +11,16 @@ class TestRectangle(unittest.TestCase):
         """Test instantiation id"""
 
         a = Rectangle(1, 2)
-        self.assertEqual(a.width + a.height, 3)
+        self.assertEqual(str(a), "[Rectangle] (1) 0/0 - 1/2")
 
         b = Rectangle(1, 2, 3)
-        self.assertEqual(b.x, 3)
+        self.assertEqual(str(b), "[Rectangle] (2) 3/0 - 1/2")
 
         c = Rectangle(1, 2, 3, 4)
-        self.assertEqual(c.y, 4)
+        self.assertEqual(str(c), "[Rectangle] (3) 3/4 - 1/2")
 
         h = Rectangle(1, 2, 3, 4, 5)
-        self.assertEqual(h.id, 5)
+        self.assertEqual(str(h), "[Rectangle] (5) 3/4 - 1/2")
 
         with self.assertRaises(TypeError):
             Rectangle("1", 2)
