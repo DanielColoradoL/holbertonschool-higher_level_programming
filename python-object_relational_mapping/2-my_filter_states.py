@@ -16,7 +16,7 @@ try:
                          port=3306)
     cur = db.cursor()
     query0 = "SELECT id, name FROM states "
-    query1 = f"WHERE name COLLATE utf8mb4_bin LIKE '{sys.argv[4]}'"
+    query1 = "WHERE name COLLATE utf8mb4_bin LIKE '{0}'".format(sys.argv[4])
     queryf = query0 + query1
     cur.execute(queryf)
     rows = cur.fetchall()
