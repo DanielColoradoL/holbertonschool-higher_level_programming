@@ -15,7 +15,11 @@ try:
                          db=sys.argv[3],
                          port=3306)
     cur = db.cursor()
-    cur.execute("SELECT id, name FROM states WHERE name LIKE 'N%'")
+    cur.execute("""
+                SELECT id, name
+                FROM states
+                WHERE name COLLATE utf8mb4_bin LIKE 'N%'
+                """)
     rows = cur.fetchall()
 
     for row in rows:
