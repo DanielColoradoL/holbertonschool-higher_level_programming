@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+Get all states
+Creates a connection to a given db
+then executes a query and print the respective rows
+"""
 import sys
 import MySQLdb
 
